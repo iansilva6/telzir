@@ -64,3 +64,30 @@ export const Input = styled.input`
         transition: 0.3s;
     }
 `;
+
+export const Box = styled.div`
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    border: ${
+        props => props.withPlan === true
+        ? "2px solid #0BBA94"
+        : "2px solid #ced4da" 
+    };
+    h3 {
+        font-weight: 900;
+        font-size: 22px;
+        letter-spacing: -0.375px;
+        color: #3B3B3B;
+        text-align: center;
+    }
+    h2 {
+        font-weight: 600;
+        font-size: 32px;
+        letter-spacing: -0.375px;
+        color: #0BBA94;
+        text-align: center;
+        padding: 10px 0px;
+    }
+`;
