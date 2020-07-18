@@ -32,7 +32,7 @@ export const Title = styled.h1`
 export const SubTitle = styled.p`
     font-weight: 400;
     font-size: 20px;
-    line-height: 46px;
+    line-height: 36px;
     letter-spacing: -0.375px;
     color: #3B3B3B;
     text-align: center;
