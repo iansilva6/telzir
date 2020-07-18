@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+// View
+import Home from './views/Home';
+
+// Pwa
 import * as serviceWorker from './serviceWorker';
+
+// Global Css
+import { GlobalStyle } from './assets/styles/global';
+
+// Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  {/* CSS Global */}
+  <GlobalStyle />
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
