@@ -2,7 +2,7 @@
 
 ---
 
-Teste prático para vaga de desenvolvedor Front End na empresa Vizir Software Studio.
+Teste prático para vaga de desenvolvedor Front End na empresa Vizir Software Studio. A aplicação foi criada com Javascript utilizando o framework React.
 
 ## 🏁 Iniciando
 Antes de começar, certifique-se de que seu computador tenha as versões do Node >= 8.10 e npm >= 5.6.

@@ -56,9 +56,14 @@ export const Input = styled.input`
     border-bottom: 2px solid transparent;
     margin-bottom: 15px;
     font-size: 16px;
-    border: 1px solid #ced4da;
+    border: ${
+        props => props.error === true
+        ? "2px solid red"
+        : "2px solid #ced4da" 
+    };
     border-radius: .25rem;
     transition: 0.3s;
+    position: relative;
     :focus {
         border-bottom: 3px solid #0BBA94;
         transition: 0.3s;
@@ -90,4 +95,12 @@ export const Box = styled.div`
         text-align: center;
         padding: 10px 0px;
     }
+`;
+
+export const BlankMessage = styled.p`
+    position: absolute;
+    color: red;
+    font-size: 11px;
+    bottom: -20px;
+
 `;

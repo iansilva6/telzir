@@ -15,4 +15,5 @@ export const Button = styled.button`
     text-transform: uppercase;
     color: #fff;
     padding: 10px 25px;
+    outline: none!important;
 `;
