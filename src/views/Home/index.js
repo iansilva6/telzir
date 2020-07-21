@@ -87,6 +87,7 @@ function Home() {
             } else {
                 //Error
                 setAlertError(true);
+                setCalculateState(false);
             }
         } else {
             setMinutesBlank(true);
@@ -96,6 +97,10 @@ function Home() {
     // Close alert function
     function closeAlert() {
         setAlertError(false);
+    }
+
+    function redirect() {
+        // action when click "Contrate agora"
     }
 
     return (
@@ -121,7 +126,7 @@ function Home() {
                                 {/* Origin Input */}
                                 <Col sm={3}>
                                     <Label>DDD de origem:</Label>
-                                    <Form.Control as="select" onChange={(e) => handleChange('origin', e)}>
+                                    <Form.Control as="select" onChange={(e) => handleChange('origin', e)} data-test="origin-input">
                                         <option value="011">011</option>
                                         <option value="016">016</option>
                                         <option value="017">017</option>
@@ -131,7 +136,7 @@ function Home() {
                                 {/* Destiny Input */}
                                 <Col sm={3}>
                                     <Label>DDD de destino:</Label>
-                                    <Form.Control as="select" onChange={(e) => handleChange('destiny', e)}>
+                                    <Form.Control as="select" onChange={(e) => handleChange('destiny', e)} data-test="destiny-input">
                                         <option value="011">011</option>
                                         <option value="016">016</option>
                                         <option value="017">017</option>
@@ -141,7 +146,7 @@ function Home() {
                                 {/* Minutes Input */}
                                 <Col sm={3}>
                                     <Label>Minutos:</Label>
-                                    <Input placeholder={"0"} type={"number"} onChange={(e) => handleChange('minutes', e)} error={minutesBlank}></Input>
+                                    <Input placeholder={"0"} type={"number"} onChange={(e) => handleChange('minutes', e)} error={minutesBlank} data-test="minutes-input"></Input>
                                     {/* Error message when minutes are blank */}
                                     { minutesBlank ? <BlankMessage>Ops, ta esquecendo de nada?</BlankMessage> : "" }
                                 </Col>
@@ -159,6 +164,7 @@ function Home() {
                                     <Button 
                                         text="Simular"
                                         actionFunction={calculatePlan}
+                                        data-test="simulate-button"
                                     />
                                 </Col>
                                 {/* RESULTS */}
@@ -171,10 +177,11 @@ function Home() {
                                             <Col sm={6}>
                                                 <Box withPlan={true}>
                                                     <h3>Com Plano FaleMais {plan}</h3>
-                                                    <h2>R$ {withPlan}</h2>
+                                                    <h2 data-test="withplan-label">R$ {withPlan}</h2>
                                                     <div className={"center"}>
                                                         <Button 
                                                             text="Contrate Agora"
+                                                            actionFunction={redirect}
                                                         />
                                                     </div>
                                                 </Box>
@@ -183,10 +190,11 @@ function Home() {
                                             <Col sm={6}>
                                                 <Box withPlan={false}>
                                                     <h3>Sem Plano FaleMais {plan}</h3>
-                                                    <h2>R$ {withoutPlan}</h2>
+                                                    <h2 data-test="withoutplan-label">R$ {withoutPlan}</h2>
                                                     <div className={"center"}>
                                                         <Button 
                                                             text="Contrate Agora"
+                                                            actionFunction={redirect}
                                                         />
                                                     </div>
                                                 </Box>
